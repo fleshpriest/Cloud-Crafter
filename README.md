@@ -10,6 +10,7 @@ python main
 Follow the prompts and get a recipe with volumes, weights, & percentages output.
 
 ### Example Output:
+```
 ╭───────────────────────┬───────┬─────────┬─────╮
 │ Fluid                 │    ml │   grams │   % │
 ├───────────────────────┼───────┼─────────┼─────┤
@@ -21,3 +22,4 @@ Follow the prompts and get a recipe with volumes, weights, & percentages output.
 │                       │       │         │     │
 │ Total                 │ 120   │   135.1 │     │
 ╰───────────────────────┴───────┴─────────┴─────╯
+```
