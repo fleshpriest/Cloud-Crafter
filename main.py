@@ -99,7 +99,7 @@ vg = Fluid(volume = target_volume * (target_VGpct / 100) - current_vg_volume, vg
 # ----------------------------------------------------------------------------------------------------------------------
 
 headers = ('Fluid', 'ml', 'grams', '%')
-table = [('Nicotine', nic.volume, nic.weight, nic.batch_pct)]
+table = [(f'Nicotine ({nic.nicPerML}mg/ml)', nic.volume, nic.weight, nic.batch_pct)]
 for flavor in flavor_values:
     table.append((flavor.name, flavor.volume, flavor.weight, flavor.batch_pct))
 table.append(('PG Base', pg.volume, pg.weight, pg.batch_pct))
