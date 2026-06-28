@@ -3,7 +3,7 @@ from tabulate import tabulate
 
 flavor_values = []
 
-def testForNumber (message):
+def getNumber (message):
     print('')
     while True:
         print(message)
@@ -47,18 +47,18 @@ class Fluid:
 # ----- Batch ----------------------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------------------------------
 
-target_volume = testForNumber('Target batch volume (milliliters)')
-target_nicMG = testForNumber('Target nicotine strength (milligrams)')
-target_PGpct = testForNumber('Target PG percentage')
-target_VGpct = testForNumber('Target VG percentage')
+target_volume = getNumber('Target batch volume (milliliters)')
+target_nicMG = getNumber('Target nicotine strength (milligrams)')
+target_PGpct = getNumber('Target PG percentage')
+target_VGpct = getNumber('Target VG percentage')
 
 # ----------------------------------------------------------------------------------------------------------------------
 # ----- Nicotine -------------------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------------------------------
 
-nic_MGperML = testForNumber('Nicotine concentrate strength (milligrams per milliliter')
-nic_PGpct = testForNumber('Nicotine concentrate PG percentage')
-nic_VGpct = testForNumber('Nicotine concentrate VG percentage')
+nic_MGperML = getNumber('Nicotine concentrate strength (milligrams per milliliter')
+nic_PGpct = getNumber('Nicotine concentrate PG percentage')
+nic_VGpct = getNumber('Nicotine concentrate VG percentage')
 
 nic = Fluid(pg_pct = nic_PGpct, vg_pct = nic_VGpct, nicPerML = nic_MGperML,
             volume = round(target_volume / nic_MGperML * target_nicMG, 1))
@@ -71,9 +71,9 @@ while True:
     name = getFlavorName()
     if not name:
         break
-    flavor_pct = testForNumber(f'{name} percentage of total volume')
-    flavor_pg = testForNumber(f'{name} PG percentage')
-    flavor_vg = testForNumber(f'{name} VG percentage')
+    flavor_pct = getNumber(f'{name} percentage of total volume')
+    flavor_pg = getNumber(f'{name} PG percentage')
+    flavor_vg = getNumber(f'{name} VG percentage')
     flavor_values.append(Fluid(volume=(target_volume*(flavor_pct/100)),
                                pg_pct=flavor_pg, vg_pct=flavor_vg))
     flavor_values[-1].name = name
